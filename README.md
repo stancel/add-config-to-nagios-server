@@ -12,16 +12,17 @@ Role Variables
 --------------
 
 The hostname of the machine you are monitoring. Host names should not have spaces in them.
-
-	`host_name: "my-server" `  
-
+```
+	host_name: "my-server"   
+```
 The alias or Nagios friendly name to show in Nagios as the computer being monitored
-
-	`nagios_friendly_name: "My Important Server" ` 
-
+```
+	nagios_friendly_name: "My Important Server"
+```
 The fully qualified domain name or IP address of the machine you are adding to be monitored
-
-	`server_fqdn: "myserver-to-monitor.com" `     
+```
+	server_fqdn: "myserver-to-monitor.com"
+```
 
 Dependencies
 ------------
