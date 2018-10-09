@@ -10,9 +10,12 @@
       - { src: '../templates/nagios-template.cfg', dest: "/usr/local/nagios/etc/servers/{{ host_name }}.cfg" }
   notify: reload-nagios
 
-
-
-
+- name: "Force Restarting of Nagios Server service"
+  become: true
+  become_method: sudo
+  service: 
+    name: nagios
+    state: restarted
 
 
 
