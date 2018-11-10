@@ -23,6 +23,10 @@ The fully qualified domain name or IP address of the machine you are adding to b
 ```
 	add_config_to_nagios_server_server_fqdn: "myserver-to-monitor.com"
 ```
+Does Nagios need to monitor WordPress updates for this server? The default is false.
+```
+	add_config_to_nagios_server_is_a_wordpress_server: false
+```
 
 Dependencies
 ------------
