@@ -1,11 +1,15 @@
 ---
 # tasks file for add-config-to-nagios-server
 
-
 - name: Push Nagios configuration file onto Nagios Server
   become: true
   become_method: sudo
-  template: src={{item.src}} dest={{item.dest}}  mode=0644 owner=root group=root
+  template: 
+    src: "{{ item.src }}"
+    dest: "{{item.dest}}"
+    mode: 0644
+    owner: root 
+    group: root
   with_items:
       - { src: '../templates/nagios-template.cfg', dest: "/usr/local/nagios/etc/servers/{{ add_config_to_nagios_server_host_name }}.cfg" }
   notify: reload-nagios
@@ -16,6 +20,3 @@
   service: 
     name: nagios
     state: restarted
-
-
-
